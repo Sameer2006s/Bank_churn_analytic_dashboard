@@ -1,37 +1,47 @@
-🏦 Bank Customer Churn Analysis
+# 🏦 Bank Customer Churn Analysis — Power BI
 
-📌 Project Overview
+An interactive Power BI project focused on analyzing customer churn and identifying customer segments that are more likely to leave a bank.
 
-This project analyzes customer churn in a banking dataset using Power BI. The objective is to identify customer segments with higher churn and understand the factors associated with customer attrition.
+The dashboard explores customer demographics, financial characteristics, account activity, and banking behavior to understand the major patterns behind customer churn.
 
-An interactive dashboard has been created to provide a clear view of churn patterns based on customer demographics, account information, financial characteristics, and customer activity.
+---
 
-🎯 Objectives
+## 📌 Project Overview
 
-- Analyze the overall customer churn rate.
-- Identify customer segments with high churn.
-- Analyze churn based on country, gender, and membership status.
-- Understand the relationship between churn and age.
-- Analyze the impact of credit card ownership and bank products.
-- Study churn across balance, credit score, tenure, and salary groups.
-- Provide data-driven insights that can help improve customer retention.
+Customer churn is an important challenge for banks because losing existing customers can directly impact revenue and long-term growth.
 
-📊 Dashboard Overview
+In this project, I analyzed **10,000 customer records** and created a **3-page interactive Power BI dashboard** to understand churn patterns and generate business-focused insights.
 
-Page 1 — Customer Churn Overview
+The project includes data transformation, calculated columns, DAX measures, data modeling, visualization, and customer segmentation.
 
-The first dashboard page provides an overall view of customer churn.
+---
 
-Key KPIs
+## 🎯 Objectives
 
-- Total Customers: 10K
-- Active Customers: 7.963K
-- Churned Customers: 2.037K
-- Average Credit Score: 650.5
-- Churn Rate: 20.37%
+- Analyze the overall customer churn rate
+- Identify customer segments with higher churn
+- Understand churn patterns across demographics
+- Analyze financial and account-related factors
+- Compare churn across different customer segments
+- Create meaningful KPIs using DAX
+- Provide recommendations that can support customer retention
 
-Analysis Included
+---
 
+## 📊 Dashboard
+
+### 1️⃣ Customer Churn Overview
+
+This page provides a high-level view of customer churn.
+
+**Key KPIs:**
+- Total Customers: **10K**
+- Active Customers: **7.963K**
+- Churned Customers: **2.037K**
+- Average Credit Score: **650.5**
+- Churn Rate: **20.37%**
+
+**Analysis includes:**
 - Churned Customers by Country
 - Churned Customers by Gender
 - Churned Customers by Member Status
@@ -41,66 +51,67 @@ Analysis Included
 
 ---
 
-Page 2 — Customer Financial & Account Analysis
+### 2️⃣ Churn & Customer Risk Analysis
 
-The second page focuses on financial and account-related characteristics of churned customers.
+This page focuses on financial and account-related factors associated with customer churn.
 
-Analysis Included
-
+**Analysis includes:**
 - Churned Customers by Balance Group
-- Churned Customers by Credit Score Group
+- Churn Rate by Credit Score Group
 - Churned Customers by Tenure Group
 - Churned Customers by Salary Group
 
-These visualizations help identify the financial and account characteristics associated with customer churn.
+These segments help identify customer groups that may require closer monitoring.
 
-🔍 Key Insights
+---
 
-Based on the dashboard:
+### 3️⃣ Key Insights & Retention Recommendations
 
-- The overall customer churn rate is 20.37%.
-- There are approximately 2,037 churned customers out of 10K customers.
-- Female customers show higher churn than male customers in the analyzed data.
-- Inactive members account for a larger share of churned customers compared with active members.
-- Customers in the 41–50 age group show the highest churn among the displayed age groups.
-- Customers with one bank product represent the largest group of churned customers.
-- Customers with a credit card account for a larger share of churned customers than customers without one.
-- Germany and France show higher numbers of churned customers than Spain.
-- Customers with higher balance levels form a significant portion of churned customers.
+The final page summarizes the major findings from the analysis and converts them into business recommendations.
 
-🛠️ Tools & Technologies
+**Key areas:**
+- High-risk customer segments
+- Inactive customer behavior
+- Age-related churn patterns
+- Bank product usage
+- High-value customers
+- Geographic churn patterns
+- Customer retention strategies
 
-- Power BI
-- DAX
-- Power Query
-- Data Modeling
-- Data Visualization
+---
 
-📈 Dashboard Features
+## 🧮 Calculated Columns
 
-- Interactive visualizations
-- KPI cards
-- Customer segmentation
-- Group-wise churn analysis
-- Financial analysis
-- Demographic analysis
-- Account behavior analysis
+Created multiple calculated columns in Power BI to make the raw data easier to analyze:
 
-💡 Business Value
+- **Age Group**
+- **Balance Group**
+- **Credit Score Group**
+- **Tenure Group**
+- **Salary Group**
+- **Credit Card Status**
+- **Active/Inactive Member Status**
 
-The analysis can help banks:
+These columns were used for customer segmentation and dashboard analysis.
 
-- Identify high-risk customer segments.
-- Develop targeted customer retention strategies.
-- Improve customer engagement.
-- Understand factors associated with customer churn.
-- Design personalized offers for at-risk customers.
-- Reduce customer attrition.
+---
 
+## 📐 DAX Measures
 
+Created DAX measures for dynamic KPI calculations, including:
 
-🚀 Conclusion
+- Total Customers
+- Active Customers
+- Churned Customers
+- Churn Rate (%)
+- Average Credit Score
 
-This Bank Customer Churn Analysis project demonstrates how Power BI, DAX, and data visualization can be used to transform customer data into meaningful business insights.
+Example:
 
-The dashboard provides a comprehensive view of customer churn and helps identify customer groups that may require targeted retention strategies.
+```DAX
+Churn Rate =
+DIVIDE(
+    SUM('Bank Customer Churn'[churn]),
+    COUNTROWS('Bank Customer Churn),
+    0
+)
